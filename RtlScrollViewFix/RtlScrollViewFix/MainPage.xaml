@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RtlScrollViewFix"
+             x:Class="RtlScrollViewFix.MainPage">
+
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="RTL" VerticalOptions="Center" />
+            <Switch x:Name="rtlToggle" />
+        </StackLayout>
+
+        <ScrollView Orientation="Horizontal">
+            <ScrollView.Triggers>
+                <DataTrigger TargetType="ScrollView" Binding="{Binding Source={x:Reference rtlToggle}, Path=IsToggled}" Value="True">
+                    <Setter Property="FlowDirection" Value="RightToLeft" />
+                </DataTrigger>
+            </ScrollView.Triggers>
+
+            <StackLayout Orientation="Horizontal">
+                <ContentView Padding="50" BackgroundColor="Red">
+                    <Label>1</Label>
+                </ContentView>
+                <ContentView Padding="50" BackgroundColor="Gray">
+                    <Label>2</Label>
+                </ContentView>
+                <ContentView Padding="50" BackgroundColor="Blue">
+                    <Label>3</Label>
+                </ContentView>
+                <ContentView Padding="50" BackgroundColor="Yellow">
+                    <Label>4</Label>
+                </ContentView>
+                <ContentView Padding="50" BackgroundColor="Brown">
+                    <Label>5</Label>
+                </ContentView>
+                <ContentView Padding="50" BackgroundColor="Green">
+                    <Label>6</Label>
+                </ContentView>
+                <ContentView Padding="50" BackgroundColor="LightGray">
+                    <Label>7</Label>
+                </ContentView>
+                <ContentView Padding="50" BackgroundColor="Orange">
+                    <Label>8</Label>
+                </ContentView>
+                <ContentView Padding="50" BackgroundColor="Pink">
+                    <Label>9</Label>
+                </ContentView>
+            </StackLayout>
+
+        </ScrollView>
+
+    </StackLayout>
+
+</ContentPage>
