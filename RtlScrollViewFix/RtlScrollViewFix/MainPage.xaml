@@ -10,14 +10,16 @@
             <Switch x:Name="rtlToggle" />
         </StackLayout>
 
-        <ScrollView Orientation="Horizontal">
-            <ScrollView.Triggers>
-                <DataTrigger TargetType="ScrollView" Binding="{Binding Source={x:Reference rtlToggle}, Path=IsToggled}" Value="True">
+        <StackLayout>
+            <StackLayout.Triggers>
+                <DataTrigger TargetType="StackLayout" Binding="{Binding Source={x:Reference rtlToggle}, Path=IsToggled}" Value="True">
                     <Setter Property="FlowDirection" Value="RightToLeft" />
                 </DataTrigger>
-            </ScrollView.Triggers>
-
-            <StackLayout Orientation="Horizontal">
+            </StackLayout.Triggers>
+            
+            <ScrollView Orientation="Horizontal">
+                
+                <StackLayout Orientation="Horizontal">
                 <ContentView Padding="50" BackgroundColor="Red">
                     <Label>1</Label>
                 </ContentView>
@@ -48,7 +50,8 @@
             </StackLayout>
 
         </ScrollView>
-
+        
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>
