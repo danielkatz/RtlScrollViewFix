@@ -32,7 +32,7 @@ namespace RtlScrollViewFix.Droid
 
             if (e.OldElement != null)
             {
-                e.NewElement.PropertyChanged -= OnElementPropertyChanged;
+                e.OldElement.PropertyChanged -= OnElementPropertyChanged;
             }
 
             if (e.NewElement != null)
